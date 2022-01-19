@@ -2,15 +2,17 @@ from django.core.checks import messages
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from django.contrib.auth.models import User
-from django.contrib import messages
+
 from .models import Role
 from .models import UserroleMap
 from django.contrib.auth import authenticate
 # Create your views here.
+
+
 def choiseview(request):
     try:
-        if request.session['role']== "Admin":
-            return render(request, 'choise.html' )
+        if request.session['role'] == "Admin":
+            return render(request, 'choise.html')
         else:
             return render(request, 'index.html', {'messages': "You Are Not Authenticated"})
     except:
