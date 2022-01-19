@@ -1,12 +1,11 @@
 from django.core.checks import messages
 from django.shortcuts import redirect, render
-from django.http import HttpResponse, response
+from django.http import HttpResponse
 from django.contrib.auth.models import User
-import uuid
 from django.contrib import messages
-from .models import *
+from .models import Role
+from .models import UserroleMap
 from django.contrib.auth import authenticate
-
 # Create your views here.
 def choiseview(request):
     try:
