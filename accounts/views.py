@@ -14,7 +14,8 @@ def choiseview(request):
         if request.session['role'] == "Admin":
             return render(request, 'choise.html')
         else:
-            return render(request, 'index.html', {'messages': "You Are Not Authenticated"})
+            return render(request, 'index.html', {'messages':
+             "You Are Not Authenticated"})
     except:
         return render(request, 'index.html', {'messages': "something went wrong!!"})
 
