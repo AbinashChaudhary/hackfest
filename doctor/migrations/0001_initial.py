@@ -17,8 +17,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Diagnosis',
             fields=[
-                ('id',models.BigAutoField(auto_created=True, 
-                 primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('diagnosisName', models.CharField(max_length=200)),
                 ('diagnosisBodySite', models.CharField(max_length=100)),
                 ('dateOfOnset', models.DateField()),
@@ -26,15 +25,13 @@ class Migration(migrations.Migration):
                 ('dateOfAbatement', models.DateField()),
                 ('diagnosisCertainity', models.CharField(max_length=100)),
                 ('diagnosisDescription', models.TextField()),
-                ('createdDate',
-                 models.DateField(default=datetime.datetime.now)),
+                ('createdDate', models.DateField(default=datetime.datetime.now)),
             ],
         ),
         migrations.CreateModel(
             name='LaboratoryTest',
             fields=[
-                ('id',models.BigAutoField(auto_created=True, 
-                primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('testName', models.CharField(max_length=200)),
                 ('testSpecimen', models.CharField(max_length=100)),
                 ('testBodySite', models.CharField(max_length=200)),
@@ -45,8 +42,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='MedicalDevice',
             fields=[
-                ('id',
-                 models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('deviceName', models.CharField(max_length=200)),
                 ('deviceBodySite', models.CharField(max_length=200)),
                 ('deviceUse', models.CharField(max_length=100)),
@@ -56,8 +52,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Medicine',
             fields=[
-                ('id',
-                 models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=200)),
                 ('form', models.CharField(max_length=100)),
                 ('category', models.CharField(max_length=100)),
@@ -74,8 +69,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='MedicineDirection',
             fields=[
-                ('id',
-                 models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('doseUnit', models.CharField(max_length=100)),
                 ('duration', models.CharField(max_length=100)),
                 ('doseTiming', models.CharField(max_length=100)),
@@ -87,8 +81,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Prescription',
             fields=[
-                ('id',
-                 models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('diagnosisId', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='doctor.diagnosis')),
                 ('laboratoryTestId', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='doctor.laboratorytest')),
                 ('medicalDevice', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='doctor.medicaldevice')),
@@ -98,12 +91,9 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='MedicineDirPrescriptionMap',
             fields=[
-                ('id',
-                 models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('medicineDirectionId',
-                 models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='doctor.medicinedirection')),
-                ('prescriptionId', 
-                    models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='doctor.prescription')),
+                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('medicineDirectionId', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='doctor.medicinedirection')),
+                ('prescriptionId', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='doctor.prescription')),
             ],
         ),
     ]
