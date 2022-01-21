@@ -79,30 +79,30 @@ WSGI_APPLICATION = 'Hackfest.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-if os.getenv('GITHUB_WORKFLOW'):
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'github-actions',
-            'USER': 'postgres',
-            'PASSWORD': 'postgres',
-            'HOST': 'localhost',
-            'PORT': '5432'
-        }
-    }
+# if os.getenv('GITHUB_WORKFLOW'):
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.postgresql',
+#             'NAME': 'github-actions',
+#             'USER': 'postgres',
+#             'PASSWORD': 'postgres',
+#             'HOST': 'localhost',
+#             'PORT': '5432'
+#         }
+#     }
 
-else:
+# else:
 
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'hackfest',
-            'USER': 'postgres',
-            'PASSWORD': '1234',
-            'HOST': 'localhost',
-            'PORT': '5432',
-        }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'pbgwzxpzrd',
+        'PASSWORD': '65X13P14L5JY6MVS$',
+        'HOST': 'mygroupkapp-server.postgres.database.azure.com',
+        'PORT': '5432',
     }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
