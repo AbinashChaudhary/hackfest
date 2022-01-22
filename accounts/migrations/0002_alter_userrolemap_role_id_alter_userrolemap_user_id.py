@@ -9,18 +9,22 @@ class Migration(migrations.Migration):
 
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ('accounts', '0001_initial'),
+        ("accounts", "0001_initial"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='userrolemap',
-            name='role_id',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='accounts.role'),
+            model_name="userrolemap",
+            name="role_id",
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE, to="accounts.role"
+            ),
         ),
         migrations.AlterField(
-            model_name='userrolemap',
-            name='user_id',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL),
+            model_name="userrolemap",
+            name="user_id",
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL
+            ),
         ),
     ]

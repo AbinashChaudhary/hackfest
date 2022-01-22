@@ -10,46 +10,78 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Patient',
+            name="Patient",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=150)),
-                ('mobile', models.CharField(max_length=10, validators=[django.core.validators.RegexValidator(message='Please enter valid mobile number.', regex='^[6-9]\\d{9}$')])),
-                ('email', models.EmailField(max_length=254, unique=True)),
-                ('registrationNumber', models.CharField(max_length=50)),
-                ('bloodGroup', models.CharField(max_length=10)),
-                ('gender', models.CharField(max_length=20)),
-                ('dateOfBirth', models.DateField()),
-                ('createdDate', models.DateField(default=datetime.datetime.now)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=150)),
+                (
+                    "mobile",
+                    models.CharField(
+                        max_length=10,
+                        validators=[
+                            django.core.validators.RegexValidator(
+                                message="Please enter valid mobile number.",
+                                regex="^[6-9]\\d{9}$",
+                            )
+                        ],
+                    ),
+                ),
+                ("email", models.EmailField(max_length=254, unique=True)),
+                ("registrationNumber", models.CharField(max_length=50)),
+                ("bloodGroup", models.CharField(max_length=10)),
+                ("gender", models.CharField(max_length=20)),
+                ("dateOfBirth", models.DateField()),
+                ("createdDate", models.DateField(default=datetime.datetime.now)),
             ],
         ),
         migrations.CreateModel(
-            name='PatientRecord',
+            name="PatientRecord",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('height', models.IntegerField(null=True)),
-                ('weight', models.IntegerField(null=True)),
-                ('bloodPressure', models.CharField(max_length=50)),
-                ('pulseRate', models.CharField(max_length=50)),
-                ('bodyTemprature', models.CharField(max_length=50)),
-                ('isAlcolohic', models.CharField(max_length=10)),
-                ('isSmoker', models.CharField(max_length=10)),
-                ('allergies', models.TextField(null=True)),
-                ('pregnancyStatus', models.CharField(max_length=5, null=True)),
-                ('estimatedDelivery', models.DateField()),
-                ('previousSurgery', models.TextField(null=True)),
-                ('isDiabetic', models.CharField(max_length=5)),
-                ('insurancePlanName', models.CharField(max_length=100, null=True)),
-                ('insurancePlanNumber', models.CharField(max_length=50, null=True)),
-                ('status', models.CharField(max_length=20)),
-                ('createdDate', models.DateField(default=datetime.datetime.now)),
-                ('updatedDate', models.DateField(default=datetime.datetime.now)),
-                ('patientId', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='healthcare.patient')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("height", models.IntegerField(null=True)),
+                ("weight", models.IntegerField(null=True)),
+                ("bloodPressure", models.CharField(max_length=50)),
+                ("pulseRate", models.CharField(max_length=50)),
+                ("bodyTemprature", models.CharField(max_length=50)),
+                ("isAlcolohic", models.CharField(max_length=10)),
+                ("isSmoker", models.CharField(max_length=10)),
+                ("allergies", models.TextField(null=True)),
+                ("pregnancyStatus", models.CharField(max_length=5, null=True)),
+                ("estimatedDelivery", models.DateField()),
+                ("previousSurgery", models.TextField(null=True)),
+                ("isDiabetic", models.CharField(max_length=5)),
+                ("insurancePlanName", models.CharField(max_length=100, null=True)),
+                ("insurancePlanNumber", models.CharField(max_length=50, null=True)),
+                ("status", models.CharField(max_length=20)),
+                ("createdDate", models.DateField(default=datetime.datetime.now)),
+                ("updatedDate", models.DateField(default=datetime.datetime.now)),
+                (
+                    "patientId",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="healthcare.patient",
+                    ),
+                ),
             ],
         ),
     ]
