@@ -95,7 +95,7 @@ WSGI_APPLICATION = 'Hackfest.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Hackfest',
+        'NAME': 'hackfests',
         'USER': 'pbgwzxpzrd',
         'PASSWORD': '65X13P14L5JY6MVS$',
         'HOST': 'mygroupkapp-server.postgres.database.azure.com',

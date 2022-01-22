@@ -20,7 +20,7 @@ jobs:
         env:
           POSTGRES_USER: pbgwzxpzrd
           POSTGRES_PASSWORD: 65X13P14L5JY6MVS$
-          POSTGRES_DB: Hackfest
+          POSTGRES_DB: hackfests
           POSTGRES_HOST: mygroupkapp-server.postgres.database.azure.com
         ports:
           - 5432:5432
