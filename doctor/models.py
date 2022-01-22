@@ -37,7 +37,7 @@ class LaboratoryTest(models.Model):
     testBodySite = models.CharField(max_length=200)
     testUse = models.CharField(max_length=100)
     testDescription = models.CharField(max_length=100)
-    testReport = models.CharField(max_length=1000)
+    #testReport = models.CharField(max_length=1000)
 class Prescription(models.Model):
     patientId = models.ForeignKey(Patient, on_delete=models.CASCADE)
     diagnosisId = models.ForeignKey(Diagnosis, on_delete=models.CASCADE)
